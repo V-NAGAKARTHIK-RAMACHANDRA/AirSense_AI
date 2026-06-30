@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Predict AQI | AirSense AI</title>
+
+<link rel="stylesheet"
+href="assets/css/style.css">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar">
+
+<div class="logo">
+
+🌍 AirSense AI
+
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="predict.html">Predict</a></li>
+
+<li><a href="dashboard.html">Dashboard</a></li>
+
+</ul>
+
+</nav>
+
+<!-- Hero -->
+
+<section class="prediction-page">
+
+<div class="glass-card">
+
+<h1>
+
+Predict Air Quality
+
+</h1>
+
+<p>
+
+Enter pollution parameters below.
+
+</p>
+
+<!-- Sliders -->
+
+<div id="prediction-form">
+
+    <label>PM2.5</label>
+
+<input
+type="range"
+min="0"
+max="300"
+value="50"
+id="pm25">
+
+<span id="pm25Value">50</span>
+
+<label>PM10</label>
+
+<input
+type="range"
+min="0"
+max="400"
+value="80"
+id="pm10">
+
+<span id="pm10Value">80</span>
+
+<label>CO</label>
+
+<input
+type="range"
+min="0"
+max="500"
+value="100"
+id="co">
+
+<span id="coValue">100</span>
+
+<label>NO2</label>
+
+<input
+type="range"
+min="0"
+max="200"
+value="40"
+id="no2">
+
+<span id="no2Value">40</span>
+
+<label>SO2</label>
+
+<input
+type="range"
+min="0"
+max="200"
+value="20"
+id="so2">
+
+<span id="so2Value">20</span>
+
+<label>Humidity</label>
+
+<input
+type="range"
+min="0"
+max="100"
+value="60"
+id="humidity">
+
+<span id="humidityValue">60</span>
+
+</div>
+
+<button id="predictBtn">
+
+Predict AQI
+
+</button>
+
+</div>
+
+<div class="result-card">
+
+<div class="aqi-number">
+
+--
+
+</div>
+
+<div class="aqi-status">
+
+Waiting for Prediction
+
+</div>
+
+<div class="aqi-meter">
+
+<div class="meter-fill"></div>
+
+</div>
+
+<div class="health-card">
+
+Health recommendation will appear here.
+
+</div>
+
+</div>
+
+</section>
+
+<script src="assets/js/predict.js"></script>
+
+</body>
+
+</html>
