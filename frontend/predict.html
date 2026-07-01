@@ -3,186 +3,223 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <title>Predict AQI | AirSense AI</title>
 
-<title>Predict AQI | AirSense AI</title>
-
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/predict.css">
-<link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/predict.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 
 </head>
 
 <body>
 
-<!-- Navbar -->
+    <!-- ========================= -->
+    <!-- Navbar -->
+    <!-- ========================= -->
 
-<nav class="navbar">
+    <nav class="navbar">
 
-<div class="logo">
+        <div class="logo">
+            🌍 AirSense AI
+        </div>
 
-🌍 AirSense AI
+        <ul class="nav-links">
 
-</div>
+            <li><a href="index.html">Home</a></li>
 
-<ul>
+            <li><a href="predict.html" class="active">Predict</a></li>
 
-<li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
 
-<li><a href="predict.html">Predict</a></li>
+        </ul>
 
-<li><a href="dashboard.html">Dashboard</a></li>
+    </nav>
 
-</ul>
 
-</nav>
 
-<!-- Hero -->
+    <!-- ========================= -->
+    <!-- Prediction Section -->
+    <!-- ========================= -->
 
-<section class="prediction-container">
+    <section class="prediction-container">
 
-<div class="left-panel">
+        <!-- ================= LEFT PANEL ================= -->
 
-<!-- Prediction Form -->
+        <div class="left-panel">
 
-</div>
+            <div class="glass-card">
 
-<div class="right-panel">
+                <h1>Predict Air Quality</h1>
 
-<!-- Result Card -->
+                <p>
+                    Enter pollution parameters below and let our AI model
+                    estimate the Air Quality Index (AQI).
+                </p>
 
-</div>
+                <div id="prediction-form">
 
-</section>
+                    <!-- PM2.5 -->
 
-<div class="glass-card">
+                    <label for="pm25">
+                        PM2.5
+                        <span
+id="pm25Value"
+class="slider-value">
 
-<h1>
+50
 
-Predict Air Quality
+</span>
+                    </label>
 
-</h1>
+                    <input
+                        type="range"
+                        id="pm25"
+                        min="0"
+                        max="300"
+                        value="50">
 
-<p>
+                    <!-- PM10 -->
 
-Enter pollution parameters below.
+                    <label for="pm10">
+                        PM10
+                        <span id="pm10Value"
+                        class="slider-value">
+                        80</span>
+                    </label>
 
-</p>
+                    <input
+                        type="range"
+                        id="pm10"
+                        min="0"
+                        max="400"
+                        value="80">
 
-<!-- Sliders -->
+                    <!-- CO -->
 
-<div id="prediction-form">
+                    <label for="co">
+                        CO
+                        <span id="coValue"
+                        class="slider-value">
+                        100</span>
+                    </label>
 
-    <label>PM2.5</label>
+                    <input
+                        type="range"
+                        id="co"
+                        min="0"
+                        max="500"
+                        value="100">
 
-<input
-type="range"
-min="0"
-max="300"
-value="50"
-id="pm25">
+                    <!-- NO2 -->
 
-<span id="pm25Value">50</span>
+                    <label for="no2">
+                        NO₂
+                        <span id="no2Value"
+                        class="slider-value">
+                        40</span>
+                    </label>
 
-<label>PM10</label>
+                    <input
+                        type="range"
+                        id="no2"
+                        min="0"
+                        max="200"
+                        value="40">
 
-<input
-type="range"
-min="0"
-max="400"
-value="80"
-id="pm10">
+                    <!-- SO2 -->
 
-<span id="pm10Value">80</span>
+                    <label for="so2">
+                        SO₂
+                        <span id="so2Value"
+                        class="slider-value">
+                        20</span>
+                    </label>
 
-<label>CO</label>
+                    <input
+                        type="range"
+                        id="so2"
+                        min="0"
+                        max="200"
+                        value="20">
 
-<input
-type="range"
-min="0"
-max="500"
-value="100"
-id="co">
+                    <!-- Humidity -->
 
-<span id="coValue">100</span>
+                    <label for="humidity">
+                        Humidity
+                        <span id="humidityValue"
+                        class="slider-value">
+                        60%
+                        </span>
+                    </label>
 
-<label>NO2</label>
+                    <input
+                        type="range"
+                        id="humidity"
+                        min="0"
+                        max="100"
+                        value="60">
 
-<input
-type="range"
-min="0"
-max="200"
-value="40"
-id="no2">
+                </div>
 
-<span id="no2Value">40</span>
+                <button id="predictBtn">
 
-<label>SO2</label>
+                    🚀 Predict AQI
 
-<input
-type="range"
-min="0"
-max="200"
-value="20"
-id="so2">
+                </button>
 
-<span id="so2Value">20</span>
+            </div>
 
-<label>Humidity</label>
+        </div>
 
-<input
-type="range"
-min="0"
-max="100"
-value="60"
-id="humidity">
 
-<span id="humidityValue">60</span>
 
-</div>
+        <!-- ================= RIGHT PANEL ================= -->
 
-<button id="predictBtn">
+        <div class="right-panel">
 
-Predict AQI
+            <div class="result-card">
 
-</button>
+                <h2>Prediction Result</h2>
 
-</div>
+                <div class="aqi-number">
 
-<div class="result-card">
+                    --
 
-<div class="aqi-number">
+                </div>
 
---
+                <div class="aqi-status">
 
-</div>
+                    Waiting for Prediction...
 
-<div class="aqi-status">
+                </div>
 
-Waiting for Prediction
+                <div class="aqi-meter">
 
-</div>
+                    <div class="meter-fill"></div>
 
-<div class="aqi-meter">
+                </div>
 
-<div class="meter-fill"></div>
+                <div class="health-card">
 
-</div>
+                    Health recommendation will appear here.
 
-<div class="health-card">
+                </div>
 
-Health recommendation will appear here.
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </section>
 
-</section>
 
-<script src="assets/js/predict.js"></script>
+
+    <!-- JavaScript -->
+
+    <script src="assets/js/predict.js"></script>
 
 </body>
 
